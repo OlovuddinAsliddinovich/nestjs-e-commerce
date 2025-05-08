@@ -1,6 +1,6 @@
 import { Body, Controller, Post, UseGuards } from '@nestjs/common';
 import { OrderService } from './order.service';
-import { OrderDTO } from 'src/dto/order.dto';
+import { OrderDTO } from '../dto/order.dto';
 import { ApiTags } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 

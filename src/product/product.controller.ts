@@ -19,9 +19,9 @@ import { UpdateProductDTO } from './dto/update-product.dto';
 import { ApiTags } from '@nestjs/swagger';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
-import { editFileName } from 'src/utilities/file-heplers';
+import { editFileName } from '../utilities/file-heplers';
 import { AuthGuard } from '@nestjs/passport';
-import { QueryProductDTO } from 'src/dto/query.product.dto';
+import { QueryProductDTO } from '../dto/query.product.dto';
 
 @ApiTags('Product')
 @Controller('product')

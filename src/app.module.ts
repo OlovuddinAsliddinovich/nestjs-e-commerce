@@ -9,6 +9,7 @@ import { ProductModule } from './product/product.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { OrderModule } from './order/order.module';
+import 'dotenv/config';
 
 @Module({
   imports: [
@@ -16,7 +17,11 @@ import { OrderModule } from './order/order.module';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'uploads'),
     }),
-    MongooseModule.forRoot(process.env.MONGODB_URL as string),
+    MongooseModule.forRoot(
+      process.env.NODE_ENV !== 'test'
+        ? (process.env.MONGODB_URL_TEST as string)
+        : (process.env.MONGODB_URL as string),
+    ),
     SharedModule,
     AuthModule,
     ProductModule,

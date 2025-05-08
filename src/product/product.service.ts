@@ -3,9 +3,9 @@ import { CreateProductDTO } from './dto/create-product.dto';
 import { UpdateProductDTO } from './dto/update-product.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Product } from 'src/interfaces/product.interface';
+import { Product } from '../interfaces/product.interface';
 import * as fs from 'fs';
-import { QueryProductDTO } from 'src/dto/query.product.dto';
+import { QueryProductDTO } from '../dto/query.product.dto';
 
 @Injectable()
 export class ProductService {

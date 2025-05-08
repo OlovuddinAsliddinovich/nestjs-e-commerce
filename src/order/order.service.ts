@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { OrderDTO } from 'src/dto/order.dto';
-import { Order } from 'src/interfaces/order.interface';
+import { OrderDTO } from '../dto/order.dto';
+import { Order } from '../interfaces/order.interface';
 
 @Injectable()
 export class OrderService {

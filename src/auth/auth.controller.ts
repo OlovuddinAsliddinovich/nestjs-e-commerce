@@ -8,9 +8,9 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { RegisterDTO } from 'src/dto/register.dto';
-import { LoginDTO } from 'src/dto/login.dto';
-import { UserService } from 'src/shared/user.service';
+import { RegisterDTO } from '../dto/register.dto';
+import { LoginDTO } from '../dto/login.dto';
+import { UserService } from '../shared/user.service';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiTags } from '@nestjs/swagger';
 
@@ -58,7 +58,6 @@ export class AuthController {
 
   @Get('check')
   @UseGuards(AuthGuard('jwt'))
-
   async check() {
     return 'authorized';
   }
