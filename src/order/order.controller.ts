@@ -10,7 +10,7 @@ export class OrderController {
   constructor(private readonly orderService: OrderService) {}
 
   @Post('add')
-@UseGuards(AuthGuard('jwt'))
+  @UseGuards(AuthGuard('jwt'))
   async add(@Body() orderDTO: OrderDTO) {
     return this.orderService.add(orderDTO);
   }
