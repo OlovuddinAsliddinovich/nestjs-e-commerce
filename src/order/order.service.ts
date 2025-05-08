@@ -18,9 +18,7 @@ export class OrderService {
       order = new this.orderModel({
         owner: orderDTO.owner,
         totalPrice: orderDTO.totalPrice,
-        $set: {
-          products: { ...orderDTO.product },
-        },
+        products: [orderDTO.product],
       });
 
       await order.save();
@@ -28,7 +26,7 @@ export class OrderService {
       return order;
     }
 
-    order.updateOne({
+    await order.updateOne({
       owner: orderDTO.owner,
       totalPrice: orderDTO.totalPrice,
       $set: {
